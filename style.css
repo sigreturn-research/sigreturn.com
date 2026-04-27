@@ -391,23 +391,72 @@ main > section {
   transform: translateX(4px);
 }
 
-/* ------- Services ------- */
-.services-text {
-  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+/* ------- Block lede ------- */
+.block-lede {
+  font-size: clamp(1.02rem, 1.4vw, 1.15rem);
   color: var(--muted);
-  max-width: 60ch;
+  max-width: 62ch;
   line-height: 1.6;
+  margin-top: 0.4rem;
+  font-weight: 400;
+  letter-spacing: -0.005em;
 }
 
-.services-text a {
+/* ------- Services list ------- */
+.service-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.service {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: clamp(1rem, 3vw, 2.75rem);
+  padding: clamp(1.5rem, 2.6vw, 2.25rem) 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.service:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.service-num {
+  font-size: 0.78rem;
+  color: var(--muted-2);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.55rem;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.service-title {
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-weight: 500;
+  letter-spacing: -0.022em;
+  margin-bottom: 0.5rem;
+  line-height: 1.15;
+}
+
+.service-desc {
+  color: var(--muted);
+  font-size: 0.97rem;
+  line-height: 1.55;
+  max-width: 56ch;
+}
+
+/* ------- Approach / prose ------- */
+.prose {
+  max-width: 60ch;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.65;
   color: var(--fg);
-  border-bottom: 1px solid var(--hairline-strong);
-  padding-bottom: 1px;
-  transition: border-color 160ms ease;
 }
 
-.services-text a:hover {
-  border-bottom-color: var(--fg);
+.prose strong {
+  font-weight: 600;
 }
 
 /* ------- Contact ------- */
@@ -649,6 +698,15 @@ main > section {
 
   .card-name {
     font-size: 1.7rem;
+  }
+
+  .service {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .service-num {
+    padding-top: 0;
   }
 
   .footer-grid {
